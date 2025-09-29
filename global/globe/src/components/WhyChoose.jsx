@@ -5,7 +5,7 @@ const [data,setdata]=useState(null)
 
 const getdata=async ()=>{
   try {
-     await fetch('https://global-tech-git-new-akshays-projects-3dedcda8.vercel.app/whychoose/').then((res)=>{
+     await fetch('http://localhost:4000/whychoose/').then((res)=>{
       return res.json()
      }).then((res)=>{
       console.log(res);
