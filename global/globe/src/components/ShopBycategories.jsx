@@ -5,7 +5,7 @@ const ShopBycategories = () => {
 
   const getdata = async () => {
     try {
-      await fetch("http://localhost:4000/shopbycategories/")
+      await fetch("https://global-tech-dliz.vercel.app/shopbycategories/")
         .then((res) => {
           return res.json();
         })

@@ -10,7 +10,7 @@ export default function NewCollections() {
 
   const getdata=async ()=>{
     try {
-      await fetch('http://localhost:4000/newcollection/').then((response)=>{
+      await fetch('https://global-tech-dliz.vercel.app/newcollection/').then((response)=>{
         return response.json()
       }).then((result)=>{
         // console.log(result.data);
@@ -34,7 +34,7 @@ export default function NewCollections() {
   if (!match) return null; // invalid link
   const fileId = match[1];
   // Return direct image URL
-  return `http://localhost:4000/newcollection/image/${fileId}`;
+  return `https://global-tech-dliz.vercel.app/newcollection/image/${fileId}`;
 }
 
   return (
