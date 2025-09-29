@@ -16,7 +16,7 @@ app.use('/whychoose',WhychooseRoute)
 app.use('/shopbyroom',ShopByRoomRoute)
 app.use('/shopbycategories',ShopByCategorieRoute)
 app.use('/newcollection',Newcollection)
-app.get('/' async(req,res)=>{
+app.get('/', async(req,res)=>{
     try {
         res.send({msg:"welcome"})
     } catch (error) {
