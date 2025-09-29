@@ -5,7 +5,7 @@ const ShopBycategories = () => {
 
   const getdata = async () => {
     try {
-      await fetch("https://global-tech-dliz-git-main-akshays-projects-3dedcda8.vercel.app/newcollection")
+      await fetch("http://localhost:4000/newcollection")
         .then((res) => {
           return res.json();
         })
@@ -21,7 +21,14 @@ const ShopBycategories = () => {
   useEffect(() => {
     getdata();
   }, []);
-
+ function getDriveImageUrl(shareLink) {
+  // Match the file ID in the share link
+  const match = shareLink.match(/\/d\/([a-zA-Z0-9_-]+)\//);
+  if (!match) return null; // invalid link
+  const fileId = match[1];
+  // Return direct image URL
+  return `http://localhost:4000/newcollection/image/${fileId}`;
+}
   return (
     <div className="w-[100%] bg-[#fef0e5] text-center">
       <br />
@@ -41,11 +48,12 @@ const ShopBycategories = () => {
       <br />
       <div className="grid grid-cols-1 mx-10 sm:grid-cols-2 md:grid-cols-4 gap-10 md:mx-10 items-center text-center">
         {data?.map((ele, ind) => {
+             const imgUrl = getDriveImageUrl(ele.img)
           return (
             <div key={ind + 1} className="bg-white rounded-xl shadow-md">
               <img
                 className="w-[60%] md:w-[40%] h-55 mx-auto"
-                src={ele.img}
+                src={imgUrl}
                 alt=""
               />
               <h2 className="font-bold text-[1.2rem] text-[#60392b]">
