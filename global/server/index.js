@@ -9,13 +9,22 @@ const { ShopByCategorieRoute } = require('./Routes/ShopByCategoies')
 require('dotenv').config()
 
 app.use(cors({
-    origin:"*"
-}))
+    origin: '*',
+    methods: ['GET','POST','PUT','DELETE','OPTIONS']
+   
+}));
+
+// Handle preflight requests
+// app.options('*', cors());
+
 app.use(express.json())
 app.use('/whychoose',WhychooseRoute)
 app.use('/shopbyroom',ShopByRoomRoute)
 app.use('/shopbycategories',ShopByCategorieRoute)
 app.use('/newcollection',Newcollection)
+
+
+
 app.get('/', async(req,res)=>{
     try {
         res.send({msg:"welcome"})
@@ -26,6 +35,8 @@ app.get('/', async(req,res)=>{
 app.listen(process.env.PORT,async ()=>{
 try {
     await connection
+    console.log('server is running');
+    
       
 } catch (error) {
     console.log(error);

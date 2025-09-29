@@ -5,7 +5,7 @@ const [data,setdata]=useState(null)
 
 const getdata=async ()=>{
   try {
-     await fetch('https://global-tech-dliz-git-main-akshays-projects-3dedcda8.vercel.app/whychoose/').then((res)=>{
+     await fetch('https://global-tech-git-new-akshays-projects-3dedcda8.vercel.app/whychoose/').then((res)=>{
       return res.json()
      }).then((res)=>{
       console.log(res);
