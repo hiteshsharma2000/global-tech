@@ -6,7 +6,7 @@ const ShpByRoom = () => {
 
   const getdata = async () => {
     try {
-      await fetch("https://global-tech-dliz-git-main-akshays-projects-3dedcda8.vercel.app/shopbyroom/")
+      await fetch("https://global-tech-git-new-akshays-projects-3dedcda8.vercel.app/shopbyroom/")
         .then((res) => {
           return res.json();
         })
