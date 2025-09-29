@@ -16,6 +16,13 @@ app.use('/whychoose',WhychooseRoute)
 app.use('/shopbyroom',ShopByRoomRoute)
 app.use('/shopbycategories',ShopByCategorieRoute)
 app.use('/newcollection',Newcollection)
+app.get('/' async(req,res)=>{
+    try {
+        res.send({msg:"welcome"})
+    } catch (error) {
+        res.send({err:error})
+    }
+})
 app.listen(process.env.PORT,async ()=>{
 try {
     await connection
